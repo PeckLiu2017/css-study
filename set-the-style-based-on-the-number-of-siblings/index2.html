@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>根据兄弟元素的数量来设置样式</title>
+  <style media="screen">
+    li:first-child:nth-last-child(4),
+    li:first-child:nth-last-child(4)~li {
+      /* 当列表正好包含四项时，命中所有列表项 */
+      color: red;
+    }
+  </style>
+</head>
+
+<!-- 用到的技术：命中特定数量列表项中第一项 -->
+<!--
+     接下来就可以用兄弟选择符
+     (~)来命中它之后的所有兄弟元素
+                              -->
+
+<body>
+  <ul>
+    <li>huhu1</li>
+    <li>huhu2</li>
+    <li>huhu3</li>
+    <li>huhu4</li>
+  </ul>
+</body>
+
+</html>
