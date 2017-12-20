@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>自适应内部元素</title>
   <style media="screen">
     figure {
       max-width: 300px;
@@ -20,12 +20,18 @@
 <body>
   <p>Some text [...]</p> HTML
   <figure>
-    <img src="Img_conan.png" />
+    <img src="../images/conan-three.png" />
     <figcaption>
       The great Sir Adam Catlace was named after Countess Ada Lovelace, the first programmer.
     </figcaption>
   </figure>
   <p>More text [...].</p>
+  <!-- 还可以用float方式 -->
+  <!--
+    对 figure 应用 display: inline-block
+    对它的父元素应用text-align: center，然后对这个父元素的 所有子元素(p, ul, ol, dl, ...)都设置一遍 text-align: left
+  -->
+  <!-- 对 figure 应用一个固定的 width 或 max-width了，然后对figure > img应用max-width: 100% -->
 </body>
 
 </html>
