@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>满屏背景，定宽内容</title>
+  <style media="screen">
+    footer {
+      background: #555;
+    }
+
+    .wrapper {
+      background: red;
+      max-width: 900px;
+      margin: 1em calc(50% - 450px);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <footer>
+    <!-- CSS 值与单位(第三版)(http://w3.org/TR/css-values-3/#calc)定义了一个 calc() 函数，它允许我们在 CSS 中直接以这种简单的算式来指定属性的值 -->
+    <div class="wrapper">
+      <!-- 页脚的内容写在这里 -->
+      ABC
+    </div>
+  </footer>
+</body>
+
+</html>

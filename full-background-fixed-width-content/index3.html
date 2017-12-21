@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>满屏背景，定宽内容</title>
+  <style media="screen">
+    footer {
+      /*
+       * 如果把 width 这一行声明注释掉，你会发现其实没有影响。视觉效果是 完全一样的，而且不论视口尺寸如何变化都是如此
+       * 因为当 内边距是 50% - 450px 时，只可能给内容留出 900px(2×450px)的可用空间。
+       * 只有把 width 显式地设置为 900px 之外(或大或小)的其他值，我们 才有可能看出区别。
+       * 由于我们想要得到的内容宽度本来就是 900px，这一行 声明其实就是冗余的
+       */
+      /* max-width: 900px; */
+      padding: 0 calc(50% - 450px);
+      background: #333;
+    }
+
+    .wrapper {
+      background: red;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <footer>
+    <!-- CSS 值与单位(第三版)(http://w3.org/TR/css-values-3/#calc)定义了一个 calc() 函数，它允许我们在 CSS 中直接以这种简单的算式来指定属性的值 -->
+    <div class="wrapper">
+      <!-- 页脚的内容写在这里 -->
+      ABC
+    </div>
+  </footer>
+</body>
+
+</html>
