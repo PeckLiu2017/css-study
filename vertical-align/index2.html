@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>垂直居中</title>
+  <style media="screen">
+    html,
+    body {
+      height: 100%;
+    }
+    /* 我们先来看一个早期的垂直居中方法，它要求元素具有固定的宽度和高度 */
+
+    main {
+      position: absolute;
+      top: calc(50% - 3em);
+      left: calc(50% - 9em);
+      width: 18em;
+      height: 6em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 在 CSS 中对元素进行水平居中是非常简单的:如果它是一个行内元素 -->
+  <!-- 就对它的父元素应用text-align: center -->
+  <!-- 如果它是一个块级元素，就对它自身应用margin: auto -->
+  <main>
+    <h1>Am I centered yet?</h1>
+    <p>Center me, please!</p>
+  </main>
+</body>
+
+
+</html>

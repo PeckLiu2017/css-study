@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>垂直居中</title>
+  <style media="screen">
+    /**
+   * Vertical centering - Flexbox solution
+   */
+
+    * {
+      margin: 0
+    }
+
+    html,
+    body {
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
+
+    main {
+      /* 先给这个 main 元素指定一个固定的尺寸，然后借助 Flexbox 规范 所引入的 align-items 和 justify-content 属性，我们可以让它内部的文本也实现居中 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18em;
+      height: 10em;
+      box-sizing: border-box;
+      background: #655;
+      color: white;
+      margin: auto;
+    }
+
+    h1 {
+      margin-bottom: .2em;
+      font-size: 150%;
+    }
+
+    body {
+      background: #fb3;
+      font: 100%/1.5 sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Flexbox 的另一个好处在于 -->
+  <!-- 它还可以将匿名容器(即没有被标签包裹 的文本节点)垂直居中 -->
+  <!-- 举个例子，假设我们的结构代码是 -->
+  <main>Center me, please!</main>
+</body>
+
+</html>
