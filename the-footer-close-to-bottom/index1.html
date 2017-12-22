@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>根据兄弟元素的数量来设置样式</title>
+  <style media="screen">
+    /**
+   * Sticky footer with fixed height
+   */
+
+   /* 它不仅要求我们确保页脚内 的文本永远不会折行，而且每当我们改变页脚的尺寸时，都需要跟着调整 min-height 值(也就是说，这不够 DRY) */
+    main {
+      min-height: calc(100vh - 5em - 7em);
+    }
+    
+    body {
+      margin: 0;
+      font: 100%/1.5 Palatino Linotype, Palatino, serif;
+    }
+
+    h1 {
+      margin: .5em 0 0;
+    }
+
+    header {
+      text-align: center;
+      height: 3em;
+    }
+
+    main,
+    footer {
+      display: block;
+      padding: .5em calc(50% - 400px);
+    }
+
+    footer {
+      background: linear-gradient(#222, #444);
+      color: white;
+      height: 6em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Site name</h1>
+  </header>
+  <main>
+    <p>
+      Bacon ipsum dolor amet swine landjaeger frankfurter prosciutto corned beef pancetta beef chicken filet mignon turducken rump fatback flank andouille jowl. Jerky short loin pig salami pastrami prosciutto boudin ham hock pork tongue beef chuck fatback burgdoggen
+      picanha. Tenderloin shoulder brisket porchetta picanha tail. Pancetta fatback pork belly pork jerky kielbasa tongue chicken strip steak burgdoggen pork chop pastrami doner meatball. Corned beef pork loin pork leberkas, ham hock alcatra beef ribs
+      frankfurter flank capicola kielbasa salami ham rump.
+    </p>
+    <p>
+      Ham tenderloin ham hock picanha. Cupim jerky fatback salami sausage flank kevin swine. Kevin prosciutto tenderloin, kielbasa venison pork loin short loin shankle. Kevin burgdoggen turkey spare ribs chicken shankle.
+    </p>
+    <p>
+      Picanha pork sirloin cupim pig brisket ground round, landjaeger hamburger flank. Ground round shank strip steak pig pork ribeye filet mignon tri-tip beef ribs turducken doner meatloaf picanha capicola venison. Ham hock shank chuck ground round beef pork
+      short ribs cupim kevin, jowl boudin tail capicola drumstick. Strip steak pig tri-tip meatball, t-bone frankfurter prosciutto pastrami tongue cupim hamburger beef.
+    </p>
+  </main>
+  <footer>
+    <p>© 2015 No rights reserved.</p>
+    <p>Made with ♥ by an anonymous pastafarian.</p>
+  </footer>
+</body>
+
+</html>
