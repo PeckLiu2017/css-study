@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>过渡与动画</title>
+  <style media="screen">
+    /**
+   * Bouncing animation
+   */
+
+    /*
+    * 它显得很不真实。主要原因在于，每当这个小球改变运动方向时，它的移动过程都是持续加速的，这看起来很不自然。
+    * 产生这个结果的原因在于，它的调速函数在所有关键帧的衔接中都是一样的。
+    * 因为过渡和动画都是跟一条曲线 有关的，这条曲线指定了动画过程在整段时间中是如何推进的
+    */
+    @keyframes bounce {
+      60%,
+      80%,
+      to {
+        transform: translateY(400px);
+      }
+      70% {
+        transform: translateY(250px);
+      }
+      90% {
+        transform: translateY(300px);
+      }
+    }
+
+    .ball {
+      width: 0;
+      height: 0;
+      padding: 1.5em;
+      border-radius: 50%;
+      margin: auto;
+      background: red radial-gradient(at 30% 30%, #fdd, red);
+      animation: bounce 2s cubic-bezier(.1, .25, 1, .25) forwards;
+    }
+
+    body {
+      background: linear-gradient(skyblue, white 450px, yellowgreen 0);
+      min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ball"></div>
+</body>
+
+</html>
