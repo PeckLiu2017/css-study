@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>字体排印——插入换行</title>
+  <style media="screen">
+    dt,
+    dd {
+      display: inline;
+    }
+
+    dd {
+      margin: 0;
+      font-weight: bold;
+    }
+    /* 换种方式来思考:换行符不用 加在 <dd> 的后面，而是加在 <dt> 的前面 */
+
+    dd+dt::before {
+      content: '\A';
+      white-space: pre;
+    }
+
+    /* 两个电子邮件直接用逗号隔开 */
+    dd+dd::before {
+      content: ', ';
+      font-weight: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <dl>
+    <dt>Name:</dt>
+    <dd>Lea Verou</dd>
+    <dt>Email:</dt>
+    <dd>lea@verou.me</dd>
+    <dd>leaverou@mit.edu</dd>
+    <dt>Location:</dt>
+    <dd>Earth</dd>
+  </dl>
+</body>
+
+</html>
