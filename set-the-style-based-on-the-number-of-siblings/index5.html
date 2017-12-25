@@ -6,8 +6,8 @@
   <title>根据兄弟元素的数量来设置样式</title>
   <style media="screen">
     /* 仅当 列表中有 4 个或更少的列表项时 */
-    li:first-child:nth-last-child(-n+4),
-    li:first-child:nth-last-child(-n+4) ~ li {
+    li:nth-last-child(-n+4),
+    li:nth-last-child(-n+4) ~ li {
       color: red;
     }
   </style>
@@ -19,11 +19,6 @@
     <li>huhu1</li>
     <li>huhu2</li>
     <li>huhu3</li>
-    <li>huhu4</li>
-    <li>huhu5</li>
-    <li>huhu6</li>
-    <li>huhu7</li>
-    <li>huhu8</li>
   </ul>
 </body>
 

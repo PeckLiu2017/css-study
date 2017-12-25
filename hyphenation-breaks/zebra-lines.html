@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>字体排印——文本行的斑马条纹</title>
+  <style media="screen">
+    /**
+      * Zebra striped text lines
+      */
+
+    pre {
+      line-height: 1.5;
+      background: hsl(20, 50%, 95%);
+      /* 在 background 上生成条纹 */
+      background-image: linear-gradient( rgba(120, 0, 0, .1) 50%, transparent 0);
+      /*
+       * 我们 需要运用“条纹背景”一节中所描述的方法，创建出水平条纹背景。
+       * 它的 background-size 需要设置为 line-height 的两倍，
+       * 因为每个背景贴片需 要覆盖两行代码
+       */
+      background-size: auto 3em;
+      /* 这两行可以告诉浏览器在解析 background-position 时以 content box 的外沿作为基准 */
+      padding: .5em;
+      background-origin: content-box;
+      font-family: Consolas, Monaco, monospace;
+    }
+
+    code {
+      font: inherit
+    }
+  </style>
+</head>
+
+<body>
+  <pre><code>while (true) {
+  	var d = new Date();
+  	if (d.getDate()==1 &amp;&amp;
+  	    d.getMonth()==3) {
+  		alert("TROLOLOL");
+  	}
+  }</code></pre>
+</body>
+
+</html>
