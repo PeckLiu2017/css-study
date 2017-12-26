@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>背景与边框——灵活的同色系条纹背景</title>
+  <style media="screen">
+    /**
+     * Vertical stripes
+     * 在大多数情况下，我们想要的条纹图案并不是由差异极大的几种颜色组成的，
+     * 这些颜色往往属于同一色系，
+     * 只是在明度方面有着轻微的差异。
+     */
+
+    /*
+     * 颜色可以使用 hsla() 函数符在色相-饱和度-明度-阿尔法（HSLa）模式下被定义。
+     * hsla(240,100%,50%,   1)    full opaque blue 
+     */
+    body {
+      background: #58a;
+      background-image: repeating-linear-gradient(30deg,
+      hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 15px,
+      transparent 0, transparent 30px);
+      height: 100vh;
+    }
+  </style>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
