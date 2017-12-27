@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>背景与边框——blueprint复杂的背景图案</title>
+  <style media="screen">
+    /**
+     * Blueprint grid
+     */
+
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    body {
+      background: #58a;
+      /* 第一个 linear-gradient 对应大正方形的上边*/
+      /* 第二个 linear-gradient 对应大正方形的左边*/
+      /* 第三个 linear-gradient 对应小正方形的上边*/
+      /* 第四个 linear-gradient 对应小正方形的上边*/
+      /* 后一个正方形的上边构成了前一个正方形的下边和右边 */
+      background-image: linear-gradient(white 2px, transparent 0),
+      linear-gradient(90deg, white 2px, transparent 0),
+      linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
+      linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
+      /* 这里的4个 background-size 分别依次对应上面4个 linear-gradient 的宽高 */
+      background-size: 50px 50px, 50px 50px,
+      10px 10px, 10px 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
