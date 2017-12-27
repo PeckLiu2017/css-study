@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>字体排印——凸版印刷效果</title>
+</head>
+<style media="screen">
+/*
+ * 这种效果尤其适用于中等亮度背景配上深色文字的场景
+ * 出现在底部的浅色投影(或者出现在顶部的暗色投影)会让人产生物体是凹进平面内的错觉
+ * 同理，出现在底部的暗色投影(或者出现在 顶部的浅色投影)会让人产生物体从平面上凸起的错觉
+ * 这种方法之所以奏 效，是因为我们在现实世界中早已习惯了光源总是悬在头顶
+ */
+  body {
+    background: hsl(210, 13%, 40%);
+    color: hsl(210, 13%, 75%);
+    text-shadow: 0 -1px 1px black;
+  }
+</style>
+
+<body>
+  “The only way to get rid of a temptation is to yield to it.”
+</body>
+
+</html>
