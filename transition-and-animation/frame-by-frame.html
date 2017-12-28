@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>过渡与动画</title>
+  <title>过渡与动画——逐帧动画</title>
   <style media="screen">
     /**
    * Frame-by-frame animations
@@ -11,17 +11,24 @@
 
     @keyframes loader {
       to {
+        /* 图片从头到尾长度正好800 */
         background-position: -800px 0;
       }
     }
 
     .loader {
+      /* 设置宽高 */
       width: 100px;
       height: 100px;
+      /* Hide text */
       text-indent: 999px;
       overflow: hidden;
-      /* Hide text */
-      background: url(http://dabblet.com/img/loader.png) 0 0;
+      background: url(loader.png) 0 0;
+      /* 正好8帧8张图 */
+      /*
+       * 与贝塞尔曲线调速函数迥然不同的是，steps() 会根据你指定的步进数量，把整个动画切分为多帧，而且整个动画会在帧与帧之间硬切
+       * 贝塞尔曲线平滑过渡，step显示瞬时状态
+       */
       animation: loader 1s infinite steps(8);
     }
   </style>
