@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>过渡与动画——打字动画</title>
+</head>
+<style media="screen">
+    /*
+     * 核心思路就是让容器的宽度成为动画的主体:把所有文本包裹在这个容器中，
+     * 然后让它的宽度从 0 开始以步进动画的方式、一个字一个字地扩张到 它应有的宽度。
+     */
+
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+
+  @keyframes caret {
+      /* border-color: transparent; 可以完成光标闪烁的效果 */
+    50% {
+      border-color: currentColor;
+    }
+  }
+
+  h1 {
+    /* 使用字体设置 ch 使文本逐字出现而不因为生硬地按照宽度被切割而出现非完整字母的情况 */
+    font: bold 200% Consolas, Monaco, monospace;
+    width: 15ch;
+    /* 阻止折行 */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .05em solid;
+    /* step 函数作出平滑的动画效果 */
+    animation: typing 6s steps(15), caret 1s steps(1) infinite;
+  }
+</style>
+
+<body>
+  <h1>CSS is awesome!</h1>
+</body>
+
+</html>
