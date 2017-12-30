@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>过渡与动画——状态平滑的动画</title>
+</head>
+<style media="screen">
+  @keyframes panoramic {
+    /*  */
+    to {
+      background-position: 100% 0;
+    }
+  }
+
+  .panoramic {
+    /* 垂直居中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: url("naxos-greece.jpg");
+    background-size: auto 100%;
+    /* 动画是停止的 */
+    animation: panoramic 10s linear infinite alternate;
+    animation-play-state: paused;
+  }
+
+  /* 设置动画是当用户鼠标悬停时才播放 */
+  .panoramic:hover,
+  .panoramic:focus {
+    animation-play-state: running;
+  }
+</style>
+
+<body>
+  <!-- 用户的鼠标可能会触发一个华丽的 :hover 动画，而在动画还没有播完的时候，鼠标就从元素上移走了。 -->
+  <!-- 在默认情况下，动画只会立即停止播放， 并生硬地跳回开始状态 -->
+  <!-- 动画会生硬地跳回开始状态，但过渡的行为则 完全不同，过渡会反向播放，从而平滑地过渡回原始状态。 -->
+  <div class="panoramic"></div>
+</body>
+
+</html>
