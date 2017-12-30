@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    /*
+     * 为改变上一个例子圆圈内的图片会旋转的状况
+     * 用内层的变形来抵消外层的变形效果
+     * 只需把头像的动画设置为相反的角度范围(360-0deg) 即可
+     */
+
+    @keyframes spin {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    @keyframes spin-reverse {
+      from {
+        transform: rotate(1turn);
+      }
+    }
+
+    .avatar {
+      width: 50px;
+      /* margin 使这个元素正好贴着圆形父容器旋转 */
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      animation: spin 3s infinite linear;
+      transform-origin: 50% 150px;
+      /* 150px = 路径的半径 */
+    }
+
+    .avatar>img {
+      animation: spin-reverse 3s infinite linear;
+      display: block;
+      width: inherit;
+    }
+
+    .path {
+      /* 垂直居中 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* 设置滚动圆容器的大小 */
+      width: 300px;
+      height: 300px;
+      padding: 20px;
+      border-radius: 50%;
+      background: #fb3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="path">
+    <div class="avatar">
+      <img src="images/adamcatlace.jpg" />
+    </div>
+  </div>
+</body>
+
+</html>
