@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    /* 这种方法虽然作为容器的圆圈不旋转，圆圈内的图片会旋转 */
+
+    @keyframes spin {
+      to {
+        /* 旋转运动，1turn 中的数字来规定速度 */
+        transform: rotate(1turn);
+      }
+    }
+
+    .avatar {
+      width: 50px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      /* 设置动画以及起始位置 */
+      animation: spin 3s infinite linear;
+      transform-origin: 50% 150px;
+      /* 150px = 路径的半径 */
+    }
+
+    .avatar>img {
+      /* display: block 自适应父容器宽度，不出现被裁剪的情况 */
+      display: block;
+      width: inherit;
+    }
+
+    .path {
+      /* 垂直居中 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* 设置滚动圆容器的大小 */
+      width: 300px;
+      height: 300px;
+      padding: 20px;
+      border-radius: 50%;
+      background: #fb3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="path">
+    <div class="avatar">
+      <img src="images/adamcatlace.jpg" />
+    </div>
+  </div>
+</body>
+
+</html>
