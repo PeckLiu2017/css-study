@@ -6,37 +6,36 @@
   <title>过渡与动画——沿环形路径平移的动画</title>
   <style media="screen">
     /*
-     * 精简代码
-     * 用到 reverse 这个值，它可以得到原始动画的反向版本
+     * 继续精简代码
+     * 把连续的 translate() 变形操作合并起来，尤其是translate(-50%, -150px)和translate(50%, 50%)
+     * 但百分比值和绝对长度是无法合并的(除非使用 calc()， 但那样一来代码同样会相当臃肿)
+     * 尽管如此，单纯水平方向上的位移还是可以相互抵消的，
+     * 因此这基本上相当于我们只在 Y 轴上做了两次位移操作 (translateY(-150px) translateY(50%))
      */
 
     @keyframes spin {
+      from {
+        transform: translateY(150px) translateY(-50%) rotate(0turn) translateY(-150px) translateY(50%) rotate(1turn);
+      }
       to {
-        transform: rotate(1turn);
+        transform: translateY(150px) translateY(-50%) rotate(1turn) translateY(-150px) translateY(50%) rotate(0turn);
       }
     }
 
     .avatar {
       animation: spin 3s infinite linear;
-      /* 做圆周运动，否则只是原地打转 */
-      transform-origin: 50% 150px;
-    }
-
-    .avatar>img {
-      animation: inherit;
-      animation-direction: reverse;
     }
     /* Anything below this is just styling */
 
     .avatar {
       width: 50px;
       margin: 0 auto;
-      border-radius: 50%;
-      overflow: hidden;
     }
 
     .avatar>img {
       display: block;
+      border-radius: 50%;
+      overflow: hidden;
       width: inherit;
     }
 

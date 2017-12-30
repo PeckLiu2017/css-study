@@ -5,20 +5,19 @@
   <meta charset="utf-8">
   <title>过渡与动画——沿环形路径平移的动画</title>
   <style media="screen">
-    /*
-     * 精简代码
-     * 用到 reverse 这个值，它可以得到原始动画的反向版本
-     */
-
+    /* 用两个 translate 模拟效果代替了 transform-origin: 50% 150px; */
     @keyframes spin {
+      /* 从圆心开始顺时针转动 */
+      from {
+        transform: translate(50%, 150px) rotate(0turn) translate(-50%, -150px);
+      }
       to {
-        transform: rotate(1turn);
+        transform: translate(50%, 150px) rotate(1turn) translate(-50%, -150px);
       }
     }
 
     .avatar {
       animation: spin 3s infinite linear;
-      /* 做圆周运动，否则只是原地打转 */
       transform-origin: 50% 150px;
     }
 
@@ -31,12 +30,12 @@
     .avatar {
       width: 50px;
       margin: 0 auto;
-      border-radius: 50%;
-      overflow: hidden;
     }
 
     .avatar>img {
       display: block;
+      border-radius: 50%;
+      overflow: hidden;
       width: inherit;
     }
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>过渡与动画——沿环形路径平移的动画</title>
+  <style media="screen">
+    /*
+     * 再精简代码
+     * 如果把头像放在圆心并以此作为起点，我们就可以消除最开始的那两个位移操作了
+     * 而实际上这两个位移在本质上所做的就是把它放在圆心
+     */
+
+    @keyframes spin {
+      /*
+       * rotate(0turn) 到 rotate(1turn) 表示顺时针旋转
+       * rotate(0turn) 到 rotate(1turn) 表示逆时针旋转
+       * 两个效果叠加相互抵消，图片不再旋转
+       * 开始帧向下移动
+       * 结束帧向上运动
+       * 效果叠加，绕圆圈移动
+       */
+      from {
+        transform: rotate(0turn) translateY(-150px) translateY(50%) rotate(1turn);
+      }
+      to {
+        transform: rotate(1turn) translateY(-150px) translateY(50%) rotate(0turn);
+      }
+    }
+
+    .avatar {
+      animation: spin 3s infinite linear;
+    }
+    /* Anything below this is just styling */
+
+    .avatar {
+      display: block;
+      width: 50px;
+      margin: calc(50% - 25px) auto 0;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .path {
+      width: 300px;
+      height: 300px;
+      padding: 20px;
+      margin: 100px auto;
+      border-radius: 50%;
+      background: #fb3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="path">
+    <img src="images/adamcatlace.jpg" class="avatar" />
+  </div>
+</body>
+
+</html>

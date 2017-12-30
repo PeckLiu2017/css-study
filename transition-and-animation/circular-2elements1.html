@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>过渡与动画——沿环形路径平移的动画</title>
   <style media="screen">
     /* 这种方法虽然作为容器的圆圈不旋转，圆圈内的图片会旋转 */
 
@@ -21,6 +21,7 @@
       overflow: hidden;
       /* 设置动画以及起始位置 */
       animation: spin 3s infinite linear;
+      /* 做圆周运动，否则只是原地打转 */
       transform-origin: 50% 150px;
       /* 150px = 路径的半径 */
     }

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>过渡与动画——沿环形路径平移的动画</title>
   <style media="screen">
     /*
      * 精简代码
@@ -29,6 +29,7 @@
       border-radius: 50%;
       overflow: hidden;
       animation: spin 3s infinite linear;
+      /* 做圆周运动，否则只是原地打转 */
       transform-origin: 50% 150px;
       /* 150px = 路径的半径 */
     }

@@ -7,36 +7,36 @@
   <style media="screen">
     /*
      * 精简代码
-     * 用到 reverse 这个值，它可以得到原始动画的反向版本
+     * 由于现在所有变形函数所使用的都是相同的原点，我们可以把这两套动画合并为一套，并只用在 .avatar 这一个元素上
+     * 删除 .avatar>img 的动画
      */
 
     @keyframes spin {
+      /* rotate(0turn) 表示起点 */
+      from {
+        transform: translate(50%, 150px) rotate(0turn) translate(-50%, -150px) translate(50%, 50%) rotate(1turn) translate(-50%, -50%)
+      }
+      /* rotate(1turn) 表示终点 */
       to {
-        transform: rotate(1turn);
+        transform: translate(50%, 150px) rotate(1turn) translate(-50%, -150px) translate(50%, 50%) rotate(0turn) translate(-50%, -50%);
       }
     }
 
     .avatar {
       animation: spin 3s infinite linear;
-      /* 做圆周运动，否则只是原地打转 */
-      transform-origin: 50% 150px;
     }
 
-    .avatar>img {
-      animation: inherit;
-      animation-direction: reverse;
-    }
     /* Anything below this is just styling */
 
     .avatar {
       width: 50px;
       margin: 0 auto;
-      border-radius: 50%;
-      overflow: hidden;
     }
 
     .avatar>img {
       display: block;
+      border-radius: 50%;
+      overflow: hidden;
       width: inherit;
     }
 
