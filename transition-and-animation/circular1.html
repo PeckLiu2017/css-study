@@ -6,6 +6,7 @@
   <title>过渡与动画——沿环形路径平移的动画</title>
   <style media="screen">
     /* 用两个 translate 模拟效果代替了 transform-origin: 50% 150px; */
+
     @keyframes spin {
       /* 从圆心开始顺时针转动 */
       from {
@@ -16,14 +17,22 @@
       }
     }
 
+    @keyframes spin-reverse {
+      from {
+        transform: translate(50%, 50%) rotate(1turn) translate(-50%,-50%);
+      }
+      to {
+        transform: translate(50%, 50%) rotate(0turn) translate(-50%, -50%);
+      }
+    }
+
     .avatar {
       animation: spin 3s infinite linear;
-      transform-origin: 50% 150px;
     }
 
     .avatar>img {
       animation: inherit;
-      animation-direction: reverse;
+      animation-name: spin-reverse;
     }
     /* Anything below this is just styling */
 

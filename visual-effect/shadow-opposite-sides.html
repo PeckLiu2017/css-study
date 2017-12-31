@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>视觉效果——单侧投影</title>
+  <style media="screen">
+    /**
+      * One-sided shadow
+      * 模糊后的矩形与原始元素的交集部分会被切除掉，因此它 看起来像是在该元素的“后面”
+      * 不过，在某些场景下，意识到没有任 何投影绘制在元素的下层十分重要。
+      * box-shadow 四个数值的作用分别是向右移动，向下移动，模糊处理，扩张半径(这个参数会根据你指定的值去扩大或 (当指定负值时)缩小投影的尺寸)
+      */
+    div {
+      width: 1.6in;
+      height: 1in;
+      background: #fb3;
+      box-shadow: 5px 0 5px -5px black,
+      -5px 0 5px -5px black;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
