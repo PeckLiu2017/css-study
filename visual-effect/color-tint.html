@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>视觉效果——单侧投影</title>
+  <style media="screen">
+    /**
+     * Color tinting — with blending modes
+     * 图片的尺寸需要在 CSS 代码中写死;
+     * 在语义上，这个元素并不是一张图片，因此并不会被读屏器之类的
+     * 设备读出来。
+     */
+
+    .tinted-image {
+      width: 640px;
+      height: 440px;
+      background-size: cover;
+      /* 设定 background-color 红色 */
+      background-color: hsl(335, 100%, 50%);
+      /*
+       * luminosity 混合模式会保留上层元素的 HSL 亮度信 息
+       * 并从它的下层吸取色相和饱和度信息。
+       * 如果在下层准备好我们想要的主 色调，并把待处理的图片放在上层并设置为这种混合模式，
+       * 那本质上不就是 在做染色处理吗?
+       * 和 CSS 滤镜类似，混合模式可以平稳退化:如果不被支持，效果只是不出现而已，图片本身还是完好可见的
+       */
+      background-blend-mode: luminosity;
+      transition: .5s background-color;
+    }
+
+    .tinted-image:hover {
+      /* 鼠标悬浮其上则变回原图 */
+      background-color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="background-image:url(tiger.jpg)" class="tinted-image"></div>
+</body>
+
+</html>
